@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const searchBtn = document.getElementById("searchBtn");
 
+if (searchBtn) {
   searchBtn.addEventListener("click", function () {
 
     const from = document.querySelectorAll("input")[0].value;
@@ -19,13 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    alert(
-      "GURUKRUPA TOURS\n\n" +
-      "From: " + from +
-      "\nTo: " + to +
-      "\nDate: " + date +
-      "\nPassengers: " + passengers +
-      "\n\nSearch feature will be connected soon."
+    alert("Search feature will be connected soon.");
+
+  });
+}
     );
 
   });
