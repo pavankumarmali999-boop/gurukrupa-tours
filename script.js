@@ -44,19 +44,35 @@ const continueBtn = document.getElementById("continueBtn");
 
 if (continueBtn) {
   continueBtn.addEventListener("click", () => {
-    alert("Continue button clicked");
+    const passengers = document.getElementById("passengers").value;
+
+    localStorage.setItem("passengers", passengers);
+
     window.location.href = "seat.html";
   });
 }
 // ---------- Seat Selection ----------
 const seats = document.querySelectorAll(".seat");
-let selectedSeat = "";
+const maxSeats = parseInt(localStorage.getItem("passengers")) || 1;
+
+let selectedSeats = [];
 
 seats.forEach((seat) => {
   seat.addEventListener("click", () => {
-    seats.forEach(s => s.classList.remove("selected"));
+
+    if (seat.classList.contains("selected")) {
+      seat.classList.remove("selected");
+      selectedSeats = selectedSeats.filter(s => s !== seat.innerText);
+      return;
+    }
+
+    if (selectedSeats.length >= maxSeats) {
+      alert("You can select only " + maxSeats + " seat(s).");
+      return;
+    }
+
     seat.classList.add("selected");
-    selectedSeat = seat.innerText;
+    selectedSeats.push(seat.innerText);
   });
 });
 
@@ -64,12 +80,15 @@ const bookSeatBtn = document.getElementById("bookSeatBtn");
 
 if (bookSeatBtn) {
   bookSeatBtn.addEventListener("click", () => {
-    if (selectedSeat === "") {
-      alert("Please select a seat.");
+
+    if (selectedSeats.length !== maxSeats) {
+      alert("Please select exactly " + maxSeats + " seat(s).");
       return;
     }
 
-    alert("Seat " + selectedSeat + " selected.");
+    localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
+
     window.location.href = "passenger.html";
   });
 }
+  
