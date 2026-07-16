@@ -91,4 +91,24 @@ if (bookSeatBtn) {
     window.location.href = "passenger.html";
   });
 }
-  
+
+// ---------- Passenger Details ----------
+const paymentBtn = document.getElementById("paymentBtn");
+
+if (paymentBtn) {
+  paymentBtn.addEventListener("click", () => {
+
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+
+    if (name === "" || mobile === "") {
+      alert("Please fill all passenger details.");
+      return;
+    }
+
+    localStorage.setItem("passengerName", name);
+    localStorage.setItem("passengerMobile", mobile);
+
+    window.location.href = "payment.html";
+  });
+}
