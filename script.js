@@ -98,16 +98,20 @@ const paymentBtn = document.getElementById("paymentBtn");
 if (paymentBtn) {
   paymentBtn.addEventListener("click", () => {
 
-    const name = document.getElementById("name").value;
-    const mobile = document.getElementById("mobile").value;
+    const fullname = document.getElementById("fullname").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const phone = document.getElementById("phone").value;
 
-    if (name === "" || mobile === "") {
+    if (fullname === "" || age === "" || phone === "") {
       alert("Please fill all passenger details.");
       return;
     }
 
-    localStorage.setItem("passengerName", name);
-    localStorage.setItem("passengerMobile", mobile);
+    localStorage.setItem("fullname", fullname);
+    localStorage.setItem("age", age);
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("phone", phone);
 
     window.location.href = "payment.html";
   });
