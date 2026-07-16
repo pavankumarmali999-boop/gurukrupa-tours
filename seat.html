@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Select Seat - GURUKRUPA TOURS</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -13,26 +16,116 @@
 <p>Select Your Seat</p>
 </header>
 
-<div class="booking">
+<div class="seat-page">
 
-<h2>Maruti Suzuki Ertiga</h2>
+<!-- Left Side -->
+<div class="car-box">
 
-<div class="seat-layout">
-    <button class="seat">1</button>
-    <button class="seat">2</button>
+<h2>Maruti Suzuki Ertiga (7 Seater)</h2>
 
-    <div style="height:15px;"></div>
+<p class="front-text">FRONT</p>
 
-    <button class="seat">3</button>
-    <button class="seat">4</button>
+<div class="car-layout">
 
-    <div style="height:15px;"></div>
+<!-- Driver Row -->
+<div class="row">
 
-    <button class="seat">5</button>
-    <button class="seat">6</button>
+<div class="seat blocked">
+P
 </div>
 
-<button id="bookSeatBtn">Continue</button>
+<div class="steering">
+🛞
+</div>
+
+<div class="seat blocked">
+D
+</div>
+
+</div>
+
+<!-- Middle Row -->
+<div class="row">
+
+<button class="seat" data-seat="1">
+1
+</button>
+
+<button class="seat" data-seat="2">
+2
+</button>
+
+<button class="seat" data-seat="3">
+3
+</button>
+
+</div>
+
+<!-- Last Row -->
+<div class="row">
+
+<button class="seat" data-seat="4">
+4
+</button>
+
+<button class="seat" data-seat="5">
+5
+</button>
+
+</div>
+
+</div>
+
+<div class="legend">
+
+<div>
+<span class="green"></span>
+Available
+</div>
+
+<div>
+<span class="blue"></span>
+Selected
+</div>
+
+<div>
+<span class="red"></span>
+Booked
+</div>
+
+</div>
+
+<button id="bookSeatBtn">
+Continue
+</button>
+
+</div>
+
+<!-- Right Side -->
+
+<div class="summary">
+
+<h2>Your Journey</h2>
+
+<p><b>From:</b> <span id="showFrom">Jaysingpur</span></p>
+
+<p><b>To:</b> <span id="showTo">Pune</span></p>
+
+<p><b>Passengers:</b> <span id="showPassengers">1</span></p>
+
+<p><b>Selected Seats:</b></p>
+
+<div id="selectedSeats">
+None
+</div>
+
+<h3>Total Fare</h3>
+
+<h2 id="totalFare">
+₹0
+</h2>
+
+</div>
 
 </div>
 
