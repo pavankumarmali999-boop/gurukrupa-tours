@@ -108,3 +108,124 @@ nav a{
 .seat.selected{
     background:#ff9800;
 }
+
+/* ========================= */
+/* Ertiga Seat Layout Design */
+/* ========================= */
+
+.seat-page{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    padding:20px;
+}
+
+.car-box,
+.summary{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.car-box{
+    width:360px;
+}
+
+.summary{
+    width:300px;
+}
+
+.front-text{
+    text-align:center;
+    font-weight:bold;
+    color:#666;
+    margin-bottom:15px;
+}
+
+.car-layout{
+    border:3px solid #ccc;
+    border-radius:25px;
+    padding:20px;
+    background:#f9f9f9;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:18px 0;
+}
+
+.seat{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:12px;
+    background:#28a745;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.seat.selected{
+    background:#2196F3;
+}
+
+.seat.booked{
+    background:#e53935;
+}
+
+.blocked{
+    background:#999;
+}
+
+.steering{
+    font-size:38px;
+}
+
+.legend{
+    display:flex;
+    justify-content:space-around;
+    margin:20px 0;
+}
+
+.legend span{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    border-radius:4px;
+    margin-right:6px;
+}
+
+.green{
+    background:#28a745;
+}
+
+.blue{
+    background:#2196F3;
+}
+
+.red{
+    background:#e53935;
+}
+
+.summary h2,
+.summary h3{
+    color:#0B3D91;
+    margin-bottom:15px;
+}
+
+#selectedSeats{
+    background:#f4f4f4;
+    padding:10px;
+    border-radius:8px;
+    min-height:40px;
+    margin-bottom:20px;
+}
+
+#totalFare{
+    color:#FF6B00;
+}
