@@ -48,3 +48,28 @@ if (continueBtn) {
     window.location.href = "seat.html";
   });
 }
+// ---------- Seat Selection ----------
+const seats = document.querySelectorAll(".seat");
+let selectedSeat = "";
+
+seats.forEach((seat) => {
+  seat.addEventListener("click", () => {
+    seats.forEach(s => s.classList.remove("selected"));
+    seat.classList.add("selected");
+    selectedSeat = seat.innerText;
+  });
+});
+
+const bookSeatBtn = document.getElementById("bookSeatBtn");
+
+if (bookSeatBtn) {
+  bookSeatBtn.addEventListener("click", () => {
+    if (selectedSeat === "") {
+      alert("Please select a seat.");
+      return;
+    }
+
+    alert("Seat " + selectedSeat + " selected.");
+    window.location.href = "passenger.html";
+  });
+}
