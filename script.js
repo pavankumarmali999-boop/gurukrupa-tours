@@ -116,3 +116,24 @@ if (paymentBtn) {
     window.location.href = "payment.html";
   });
 }
+// ---------- Payment ----------
+const payBtn = document.getElementById("payBtn");
+
+if (payBtn) {
+  payBtn.addEventListener("click", () => {
+
+    const paymentMethod =
+      document.querySelector('input[name="payment"]:checked').value;
+
+    localStorage.setItem("paymentMethod", paymentMethod);
+
+    if (paymentMethod === "cash") {
+      alert("Cash Payment Selected");
+      window.location.href = "ticket.html";
+    } else {
+      alert("Online Payment Selected");
+      // आगे Razorpay जोड़ेंगे
+      window.location.href = "ticket.html";
+    }
+  });
+                               }
