@@ -39,3 +39,12 @@ if (loginBtn) {
     }
   });
 }
+
+const continueBtn = document.getElementById("continueBtn");
+
+if (continueBtn) {
+  continueBtn.addEventListener("click", () => {
+    alert("Continue button clicked");
+    window.location.href = "seat.html";
+  });
+}
