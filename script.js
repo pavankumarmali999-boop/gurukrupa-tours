@@ -51,45 +51,89 @@ if (continueBtn) {
     window.location.href = "seat.html";
   });
 }
-// ---------- Seat Selection ----------
-const seats = document.querySelectorAll(".seat");
+// ---------- Ertiga Seat Selection ----------
+
+const seats = document.querySelectorAll(".seat[data-seat]");
+
 const maxSeats = parseInt(localStorage.getItem("passengers")) || 1;
 
 let selectedSeats = [];
 
+const farePerSeat = 500;
+
+const seatBox = document.getElementById("selectedSeats");
+const fareBox = document.getElementById("totalFare");
+
+function updateSummary() {
+
+  if (seatBox) {
+    seatBox.innerHTML =
+      selectedSeats.length > 0 ? selectedSeats.join(", ") : "None";
+  }
+
+  if (fareBox) {
+    fareBox.innerHTML = "₹" + (selectedSeats.length * farePerSeat);
+  }
+}
+
 seats.forEach((seat) => {
+
   seat.addEventListener("click", () => {
 
+    const seatNo = seat.dataset.seat;
+
     if (seat.classList.contains("selected")) {
+
       seat.classList.remove("selected");
-      selectedSeats = selectedSeats.filter(s => s !== seat.innerText);
+
+      selectedSeats = selectedSeats.filter(s => s !== seatNo);
+
+      updateSummary();
+
       return;
+
     }
 
     if (selectedSeats.length >= maxSeats) {
+
       alert("You can select only " + maxSeats + " seat(s).");
+
       return;
+
     }
 
     seat.classList.add("selected");
-    selectedSeats.push(seat.innerText);
+
+    selectedSeats.push(seatNo);
+
+    updateSummary();
+
   });
+
 });
+
+updateSummary();
 
 const bookSeatBtn = document.getElementById("bookSeatBtn");
 
 if (bookSeatBtn) {
+
   bookSeatBtn.addEventListener("click", () => {
 
     if (selectedSeats.length !== maxSeats) {
+
       alert("Please select exactly " + maxSeats + " seat(s).");
+
       return;
+
     }
 
     localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
 
     window.location.href = "passenger.html";
+
   });
+
 }
 
 // ---------- Passenger Details ----------
