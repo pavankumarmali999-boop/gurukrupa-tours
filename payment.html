@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,11 +19,27 @@
 
 <p><strong>Route:</strong> Jaysingpur → Pune</p>
 
-<p><strong>Seat:</strong> 1</p>
+<p><strong>Selected Seats:</strong> <span id="seatInfo">1</span></p>
 
-<p><strong>Fare:</strong> ₹500</p>
+<p><strong>Total Fare:</strong> ₹500</p>
 
-<button id="payBtn">Pay Now</button>
+<h3>Select Payment Method</h3>
+
+<label>
+<input type="radio" name="payment" value="cash" checked>
+Cash Payment
+</label>
+
+<br><br>
+
+<label>
+<input type="radio" name="payment" value="online">
+Online Payment (UPI / Card / Net Banking)
+</label>
+
+<br><br>
+
+<button id="payBtn">Continue</button>
 
 </div>
 
